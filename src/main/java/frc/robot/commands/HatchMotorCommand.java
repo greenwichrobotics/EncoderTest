@@ -14,6 +14,7 @@ import frc.robot.OI;
 public class HatchMotorCommand extends Command {
 
   private boolean toggleA = true;
+  private boolean toggleB = true;
   private boolean isDown = true;
 
   public HatchMotorCommand() {
@@ -47,6 +48,17 @@ public class HatchMotorCommand extends Command {
     else if(!OI.pilotController.isAButtonPressed())
     {
       toggleA = true;
+    }
+
+    if(toggleB && OI.pilotController.isBButtonPressed())
+    {
+      toggleB = false;
+      Robot.hatchMotorSubsystem.testMotorSpeed(OI.getSpeed());
+    }
+    else
+    {
+      toggleB = true;
+      Robot.hatchMotorSubsystem.testMotorSpeed(0);
     }
   }
 

@@ -47,6 +47,11 @@ public class HatchMotorSubsystem extends Subsystem {
   hatchMotorController.set(0);  
   }
 
+  public void testMotorSpeed(double speed)
+  {
+      hatchMotorController.set(speed);
+  }
+
   @Override
   public void initDefaultCommand() {
     
