@@ -30,6 +30,7 @@ public class HatchMotorSubsystem extends Subsystem {
 
   public void turnClockwise() {
     hatchMotorEncoder.reset();
+    //250 is half way
     while(hatchMotorEncoder.get() > -250){
     hatchMotorController.set(-0.5);
   }
@@ -44,6 +45,11 @@ public class HatchMotorSubsystem extends Subsystem {
     hatchMotorController.set(0.5);
   }
   hatchMotorController.set(0);  
+  }
+
+  public void testMotorSpeed(double speed)
+  {
+      hatchMotorController.set(speed);
   }
 
   @Override
