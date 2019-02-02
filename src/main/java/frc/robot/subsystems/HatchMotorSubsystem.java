@@ -9,7 +9,8 @@ package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
 // import edu.wpi.first.wpilibj.DigitalOutput;
-import edu.wpi.first.wpilibj.Spark;
+//import edu.wpi.first.wpilibj.Spark;
+import edu.wpi.first.wpilibj.VictorSP;
 import edu.wpi.first.wpilibj.Encoder;
 import frc.robot.RobotMap;
 
@@ -19,12 +20,14 @@ import frc.robot.RobotMap;
 public class HatchMotorSubsystem extends Subsystem {
   // Put methods for controlling this subsystem
   // here. Call these from Commands.
-  Spark hatchMotorController;
+  //Spark hatchMotorController;
+  VictorSP hatchMotorController;
   Encoder hatchMotorEncoder;
 
 
   public HatchMotorSubsystem(){
-    hatchMotorController = new Spark(RobotMap.hatchMotor);
+    //hatchMotorController = new Spark(RobotMap.hatchMotor);
+    hatchMotorController = new VictorSP(RobotMap.hatchMotor);
     hatchMotorEncoder = new Encoder(RobotMap.armEncoderA, RobotMap.armEncoderB);
   }
 

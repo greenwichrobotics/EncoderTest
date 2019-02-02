@@ -55,7 +55,7 @@ public class HatchMotorCommand extends Command {
       toggleB = false;
       Robot.hatchMotorSubsystem.testMotorSpeed(OI.getSpeed());
     }
-    else
+    else if(!OI.pilotController.isBButtonPressed())
     {
       toggleB = true;
       Robot.hatchMotorSubsystem.testMotorSpeed(0);
